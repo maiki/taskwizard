@@ -25,4 +25,8 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
+// Include all PHP files in the 'includes' directory and its subdirectories
+foreach (glob(plugin_dir_path(__FILE__) . 'includes/**/*.php', GLOB_BRACE) as $file) {
+    require_once $file;
+}
 
